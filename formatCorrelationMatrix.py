@@ -5,12 +5,12 @@ import pandas as pd
 
 
 ###--- Path were the Correlation Matrix is located:
-filePath = './CorrelationMatrix_EW_muCMS.pdf'
+filePath = './CorrelationMatrix_A.pdf'
 
 ###--- Extracts text from PDF image and stores it in a list:
 stringList = fitz.open(filePath)[0].get_text().split()
 
-###--- Transfer the info to a nested List:
+###--- Transfer the global list to a nested List:
 sublist_i = -1
 labelsList, valuesList = [], []
 for i in range(len(stringList)):
@@ -62,12 +62,12 @@ for i in range(len(labelsList)):
 
 ###--- Build dataframe and plot CM as heatmap:
 df = pd.DataFrame(valuesList, index=latexList, columns=latexList)
-fig = plt.figure(figsize=(150,200))
+fig = plt.figure()
 ax = sns.heatmap(df, cmap="coolwarm")
 ax.xaxis.tick_top()
 ax.xaxis.set_label_position('top')
-plt.xticks(rotation=45,fontsize=15)
-plt.yticks(rotation=0, fontsize=15)
+plt.xticks(rotation=45)
+plt.yticks(rotation=0)
 plt.show()
 
 
