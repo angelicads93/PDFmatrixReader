@@ -5,7 +5,7 @@ import pandas as pd
 
 
 ###--- Path were the Correlation Matrix is located:
-filePath = '/home/agds/Desktop/CorrelationMatrix_EW_muCMS.pdf'
+filePath = './CorrelationMatrix_EW_muCMS.pdf'
 
 ###--- Extracts text from PDF image and stores it in a list:
 stringList = fitz.open(filePath)[0].get_text().split()
