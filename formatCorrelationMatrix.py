@@ -4,7 +4,7 @@ import seaborn as sns
 import pandas as pd
 
 
-###--- Path were the Correlation Matrix is located:
+###--- Path where the Correlation Matrix is located:
 filePath = './CorrelationMatrix_A.pdf'
 
 ###--- Extracts text from PDF image and stores it in a list:
